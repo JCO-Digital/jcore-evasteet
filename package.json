@@ -1,6 +1,6 @@
 {
   "name": "jcore-evasteet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A cookie consent banner wired to Google Consent Mode v2 and the WP Consent API.",
   "author": "J&Co Digital Oy <support@jco.fi>",
   "license": "GPL-2.0-or-later",

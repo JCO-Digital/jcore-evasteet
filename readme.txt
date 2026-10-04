@@ -4,7 +4,7 @@ Tags: cookies, consent, gdpr, consent mode, google tag manager
 Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,3 +69,7 @@ In the visitor's browser (localStorage, key `jcore-evasteet`), with the time it 
 No. With the WP Consent API plugin active, that plugin stores the answer in its own `wp_consent_*` cookies.
 
 == Changelog ==
+
+= 0.2.0 =
+
+* Feature: add cookie consent banner plugin
