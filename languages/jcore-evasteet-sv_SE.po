@@ -1,0 +1,331 @@
+# Copyright (C) 2026 J&Co Digital Oy
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: JCORE Evästeet 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jcore-evasteet\n"
+"Last-Translator: J&Co Digital Oy <support@jco.fi>\n"
+"Language-Team: Swedish\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-03T10:38:41+00:00\n"
+"PO-Revision-Date: 2026-10-03 12:00+0000\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: jcore-evasteet\n"
+
+#. Plugin Name of the plugin
+#: jcore-evasteet.php
+#: includes/class-banner.php:291
+msgid "JCORE Evästeet"
+msgstr "JCORE Evästeet"
+
+#. Plugin URI of the plugin
+#: jcore-evasteet.php
+msgid "https://github.com/JCO-Digital/jcore-evasteet"
+msgstr "https://github.com/JCO-Digital/jcore-evasteet"
+
+#. Description of the plugin
+#: jcore-evasteet.php
+msgid "A cookie consent banner wired to Google Consent Mode v2 and the WP Consent API."
+msgstr "En banner för samtycke till kakor, kopplad till Google Consent Mode v2 och WP Consent API."
+
+#. Author of the plugin
+#: jcore-evasteet.php
+msgid "J&Co Digital Oy"
+msgstr "J&Co Digital Oy"
+
+#. Author URI of the plugin
+#: jcore-evasteet.php
+msgid "https://jco.fi"
+msgstr "https://jco.fi"
+
+#: includes/admin/class-menu.php:62
+#: includes/admin/class-menu.php:63
+#: build/admin.js:2
+msgid "Cookie consent"
+msgstr "Samtycke till kakor"
+
+#: includes/class-banner.php:259
+msgctxt "cookie banner"
+msgid "Cookies"
+msgstr "Kakor"
+
+#: includes/class-banner.php:260
+msgid "We use cookies to understand how the site is used and to measure our marketing. Cookies the site needs to work are always on."
+msgstr "Vi använder kakor för att förstå hur webbplatsen används och för att mäta vår marknadsföring. Kakor som webbplatsen behöver för att fungera är alltid på."
+
+#: includes/class-banner.php:261
+msgctxt "cookie banner"
+msgid "Privacy Policy"
+msgstr "Integritetspolicy"
+
+#: includes/class-banner.php:262
+msgctxt "cookie banner"
+msgid "Accept all"
+msgstr "Godkänn alla"
+
+#: includes/class-banner.php:263
+msgctxt "cookie banner"
+msgid "Reject all"
+msgstr "Avvisa alla"
+
+#: includes/class-banner.php:264
+msgctxt "cookie banner"
+msgid "Customize"
+msgstr "Anpassa"
+
+#: includes/class-banner.php:265
+msgctxt "cookie banner"
+msgid "Save choices"
+msgstr "Spara val"
+
+#: includes/class-banner.php:266
+msgctxt "cookie category"
+msgid "Necessary"
+msgstr "Nödvändiga"
+
+#: includes/class-banner.php:267
+msgid "Needed for the site to work, such as keeping you signed in. Always on."
+msgstr "Behövs för att webbplatsen ska fungera, till exempel för att hålla dig inloggad. Alltid på."
+
+#: includes/class-banner.php:268
+msgctxt "cookie category"
+msgid "Analytics"
+msgstr "Statistik"
+
+#: includes/class-banner.php:269
+msgid "How the site is used, so we can improve it."
+msgstr "Hur webbplatsen används, så att vi kan förbättra den."
+
+#: includes/class-banner.php:270
+msgctxt "cookie category"
+msgid "Marketing"
+msgstr "Marknadsföring"
+
+#: includes/class-banner.php:271
+msgid "Measuring our ads and the visitors they bring."
+msgstr "Mätning av våra annonser och besökarna de ger."
+
+#: includes/class-banner.php:287
+msgid "Describe the analytics and marketing tools the site uses, and which category each one falls under."
+msgstr "Beskriv vilka analys- och marknadsföringsverktyg webbplatsen använder och vilken kategori vart och ett hör till."
+
+#: includes/class-banner.php:288
+msgid "When you first visit this site, a cookie banner asks which optional cookies you allow: analytics and marketing. Cookies the site needs to work are always on. Your answer and the time you gave it are stored in your browser, are not sent to us, and are kept until you change them. You can change your answer at any time from the cookie settings link."
+msgstr "När du besöker webbplatsen första gången frågar en kakbanner vilka valfria kakor du tillåter: statistik och marknadsföring. Kakor som webbplatsen behöver för att fungera är alltid på. Ditt svar och tidpunkten då du gav det sparas i din webbläsare, skickas inte till oss och finns kvar tills du ändrar dem. Du kan när som helst ändra ditt svar via länken till kakinställningarna."
+
+#: includes/class-plugin.php:117
+msgid "Settings"
+msgstr "Inställningar"
+
+#: views/admin/page.php:18
+msgid "The cookie consent settings need JavaScript."
+msgstr "Inställningarna för samtycke till kakor kräver JavaScript."
+
+#. translators: %s: error code
+#: build/admin.js:2
+#, js-format
+msgid "Request failed (%s)."
+msgstr "Begäran misslyckades (%s)."
+
+#: build/admin.js:2
+msgid "Default"
+msgstr "Standard"
+
+#: build/admin.js:2
+msgid "Title"
+msgstr "Rubrik"
+
+#: build/admin.js:2
+msgid "Message"
+msgstr "Meddelande"
+
+#: build/admin.js:2
+msgid "Necessary cookies"
+msgstr "Nödvändiga kakor"
+
+#: build/admin.js:2
+msgid "Analytics cookies"
+msgstr "Statistikkakor"
+
+#: build/admin.js:2
+msgid "Marketing cookies"
+msgstr "Marknadsföringskakor"
+
+#: build/admin.js:2
+msgid "Background"
+msgstr "Bakgrund"
+
+#: build/admin.js:2
+msgid "Text"
+msgstr "Text"
+
+#: build/admin.js:2
+msgid "Buttons"
+msgstr "Knappar"
+
+#: build/admin.js:2
+msgid "Button text"
+msgstr "Knapptext"
+
+#: build/admin.js:2
+msgid "Switches"
+msgstr "Reglage"
+
+#: build/admin.js:2
+msgid "Ask visitors which optional cookies they allow, and pass the answer to Google tags and other plugins."
+msgstr "Fråga besökarna vilka valfria kakor de tillåter och skicka svaret vidare till Googles taggar och andra tillägg."
+
+#: build/admin.js:2
+msgid "Banner"
+msgstr "Banner"
+
+#: build/admin.js:2
+msgid "Visitors are asked about analytics and marketing cookies. Cookies the site needs to work are always on and are not asked about."
+msgstr "Besökarna tillfrågas om statistik- och marknadsföringskakor. Kakor som webbplatsen behöver för att fungera är alltid på, och om dem ställs ingen fråga."
+
+#: build/admin.js:2
+msgid "Show the cookie banner"
+msgstr "Visa kakbannern"
+
+#: build/admin.js:2
+msgid "Leave this off if the site uses another consent manager, such as Cookiebot, CookieYes or Complianz."
+msgstr "Låt detta vara avstängt om webbplatsen använder ett annat verktyg för samtycke, till exempel Cookiebot, CookieYes eller Complianz."
+
+#: build/admin.js:2
+msgid "Position"
+msgstr "Placering"
+
+#: build/admin.js:2
+msgid "Bottom left"
+msgstr "Nere till vänster"
+
+#: build/admin.js:2
+msgid "Bottom right"
+msgstr "Nere till höger"
+
+#: build/admin.js:2
+msgid "Privacy policy"
+msgstr "Integritetspolicy"
+
+#: build/admin.js:2
+msgid "No published privacy policy page is set, so the banner links to none."
+msgstr "Ingen publicerad sida för integritetspolicy har valts, så bannern länkar inte till någon."
+
+#: build/admin.js:2
+msgid "The banner links to the page chosen in the <a>privacy settings</a>. Polylang and WPML point it to the translated page."
+msgstr "Bannern länkar till sidan som valts i <a>integritetsinställningarna</a>. Polylang och WPML pekar den till den översatta sidan."
+
+#: build/admin.js:2
+msgid "Leave a field empty to use the built-in text, which is shown in the language of the page."
+msgstr "Lämna ett fält tomt för att använda den inbyggda texten, som visas på sidans språk."
+
+#: build/admin.js:2
+msgid "Text written here is in the site's main language. Translate it under <a>string translations</a>."
+msgstr "Text som skrivs här är på webbplatsens huvudspråk. Översätt den under <a>strängöversättningar</a>."
+
+#: build/admin.js:2
+msgid "On a multilingual site, text written here is translated with the string translation of WPML or Polylang."
+msgstr "På en flerspråkig webbplats översätts text som skrivs här med strängöversättningen i WPML eller Polylang."
+
+#: build/admin.js:2
+msgid "Appearance"
+msgstr "Utseende"
+
+#: build/admin.js:2
+msgid "The banner uses the theme's fonts. Reject all and Accept all always look the same, so refusing is as easy as agreeing."
+msgstr "Bannern använder temats typsnitt. Avvisa alla och Godkänn alla ser alltid likadana ut, så att det är lika lätt att neka som att godkänna."
+
+#: build/admin.js:2
+msgid "Show the switches"
+msgstr "Visa reglagen"
+
+#: build/admin.js:2
+msgid "Google Tag Manager"
+msgstr "Google Tag Manager"
+
+#: build/admin.js:2
+msgid "The banner always sets Google Consent Mode: everything is denied until the visitor allows it, and every answer updates the signals. GA4 and Google Ads tags follow them; other tags need consent settings in the container."
+msgstr "Bannern ställer alltid in Google Consent Mode: allt nekas tills besökaren tillåter det, och varje svar uppdaterar signalerna. GA4- och Google Ads-taggar följer dem; andra taggar behöver samtyckesinställningar i containern."
+
+#: build/admin.js:2
+msgid "Container ID"
+msgstr "Container-ID"
+
+#: build/admin.js:2
+msgid "A container ID looks like GTM-XXXXXXX."
+msgstr "Ett container-ID ser ut som GTM-XXXXXXX."
+
+#: build/admin.js:2
+msgid "Optional. Loads the container right after the consent defaults, so no tag can run before them. Leave empty if another plugin or the theme loads it."
+msgstr "Valfritt. Läser in containern direkt efter samtyckets standardvärden, så att ingen tagg kan köras före dem. Lämna tomt om ett annat tillägg eller temat läser in den."
+
+#: build/admin.js:2
+msgid "Data layer"
+msgstr "Datalager"
+
+#: build/admin.js:2
+msgid "Change only if the container uses a data layer other than dataLayer."
+msgstr "Ändra bara om containern använder ett annat datalager än dataLayer."
+
+#: build/admin.js:2
+msgid "Changing an answer"
+msgstr "Ändra ett svar"
+
+#: build/admin.js:2
+msgid "Visitors must be able to change their answer at any time. A link to the address below opens the banner on its switches."
+msgstr "Besökarna måste när som helst kunna ändra sitt svar. En länk till adressen nedan öppnar bannern med reglagen framme."
+
+#: build/admin.js:2
+msgid "Add it as a custom link to the footer <a>menu</a> or a Navigation block, or link to it from any text, for example with the label \"Cookie settings\"."
+msgstr "Lägg till den som en anpassad länk i sidfotens <a>meny</a> eller i ett navigationsblock, eller länka till den från valfri text, till exempel med etiketten \"Kakinställningar\"."
+
+#: build/admin.js:2
+msgid "Add it as a custom link to a Navigation block in the footer, or link to it from any text, for example with the label \"Cookie settings\"."
+msgstr "Lägg till den som en anpassad länk i ett navigationsblock i sidfoten, eller länka till den från valfri text, till exempel med etiketten \"Kakinställningar\"."
+
+#: build/admin.js:2
+msgid "WP Consent API"
+msgstr "WP Consent API"
+
+#: build/admin.js:2
+msgid "Active. Answers are passed on to plugins that follow the WP Consent API."
+msgstr "Aktivt. Svaren skickas vidare till tillägg som följer WP Consent API."
+
+#: build/admin.js:2
+msgid "Not installed. With the WP Consent API plugin, answers are also passed on to plugins that follow it, such as Site Kit."
+msgstr "Inte installerat. Med tillägget WP Consent API skickas svaren också vidare till tillägg som följer det, till exempel Site Kit."
+
+#: build/admin.js:2
+#: build/admin.js:3
+msgid "Ask everyone again"
+msgstr "Fråga alla igen"
+
+#: build/admin.js:2
+msgid "When the cookies the site uses or the privacy policy change, ask every visitor again. Answers given before are discarded."
+msgstr "När webbplatsens kakor eller integritetspolicyn ändras, fråga alla besökare igen. Tidigare svar förkastas."
+
+#. translators: %d: revision number
+#: build/admin.js:3
+#, js-format
+msgid "Current revision: %d"
+msgstr "Nuvarande version: %d"
+
+#: build/admin.js:3
+msgid "Every visitor will see the cookie banner again, including those who have already answered. Continue?"
+msgstr "Alla besökare ser kakbannern igen, även de som redan har svarat. Fortsätta?"
+
+#: build/admin.js:3
+msgid "Every visitor will be asked again."
+msgstr "Alla besökare tillfrågas igen."
+
+#: build/admin.js:3
+msgid "Settings saved."
+msgstr "Inställningarna har sparats."
+
+#: build/admin.js:3
+msgid "Save changes"
+msgstr "Spara ändringar"

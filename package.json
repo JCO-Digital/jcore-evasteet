@@ -1,0 +1,43 @@
+{
+  "name": "jcore-evasteet",
+  "version": "0.1.0",
+  "description": "A cookie consent banner wired to Google Consent Mode v2 and the WP Consent API.",
+  "author": "J&Co Digital Oy <support@jco.fi>",
+  "license": "GPL-2.0-or-later",
+  "private": true,
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format src",
+    "lint:js": "wp-scripts lint-js src",
+    "lint:css": "wp-scripts lint-style 'src/**/*.scss'",
+    "lint:php": "composer lint",
+    "check": "pnpm lint:js && pnpm lint:css && pnpm lint:php",
+    "i18n": "pnpm make-pot && pnpm make-mo && pnpm make-json",
+    "make-pot": "wp i18n make-pot . languages/jcore-evasteet.pot --domain=jcore-evasteet --slug=jcore-evasteet --exclude=vendor,node_modules,src,release,dist,.wp",
+    "make-mo": "wp i18n make-mo languages languages",
+    "make-json": "pnpm dlx --package='@wp-blocks/make-pot@1.6.3' makejson build/ languages/",
+    "playground": "wp-playground-cli server --blueprint=.wp/blueprint.json --mount=.:/wordpress/wp-content/plugins/jcore-evasteet --php=8.2 --port=8884"
+  },
+  "devDependencies": {
+    "@wordpress/api-fetch": "^7.56.0",
+    "@wordpress/components": "^41.0.0",
+    "@wordpress/compose": "^8.9.0",
+    "@wordpress/data": "^10.56.0",
+    "@wordpress/element": "^8.8.0",
+    "@wordpress/i18n": "^6.29.0",
+    "@wordpress/icons": "^17.0.0",
+    "@wordpress/notices": "^5.56.0",
+    "@wordpress/scripts": "^36.0.0",
+    "@wp-playground/cli": "^3.1.56"
+  },
+  "packageManager": "pnpm@11.3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCO-Digital/jcore-evasteet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JCO-Digital/jcore-evasteet/issues"
+  },
+  "homepage": "https://github.com/JCO-Digital/jcore-evasteet#readme"
+}

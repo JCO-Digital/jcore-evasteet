@@ -1,0 +1,5 @@
+version-sync = ["jcore-evasteet.php", "readme.txt", "package.json"]
+changelog = true
+changelog-format = "wordpress"
+changelog-file = "readme.txt"
+changelog-start = "== Changelog =="

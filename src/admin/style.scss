@@ -1,0 +1,217 @@
+// Colours come from the WordPress admin palette, so the screen sits with the
+// rest of wp-admin; the accent follows the user's admin colour scheme.
+$border: #dcdcde;
+$surface: #fff;
+$surface-muted: #f6f7f7;
+$text: #1e1e1e;
+$text-muted: #646970;
+$accent: var(--wp-admin-theme-color, #2271b1);
+$radius: 8px;
+$break-medium: 782px;
+$break-wide: 1100px;
+
+.jcore-evasteet-admin {
+	max-width: 1280px;
+	color: $text;
+
+	h2 {
+		margin: 0;
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	// ── Header ────────────────────────────────────────────────────────────────
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		margin: 8px 0 28px;
+
+		h1 {
+			margin: 0;
+			padding: 0;
+			font-size: 23px;
+			font-weight: 600;
+			line-height: 1.3;
+		}
+	}
+
+	&__logo {
+		display: inline-flex;
+		flex: none;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		border-radius: 12px;
+		background: $accent;
+		color: #fff;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+
+		svg {
+			fill: currentcolor;
+		}
+	}
+
+	&__tagline {
+		margin: 2px 0 0;
+		color: $text-muted;
+	}
+
+	// ── Sections ──────────────────────────────────────────────────────────────
+
+	&__settings {
+		max-width: 1040px;
+	}
+
+	&__section {
+		display: grid;
+		grid-template-columns: 280px minmax(0, 1fr);
+		gap: 32px;
+		padding: 0 0 32px;
+
+		& + & {
+			padding-top: 32px;
+			border-top: 1px solid $border;
+		}
+
+		@media (max-width: $break-wide) {
+			grid-template-columns: 1fr;
+			gap: 12px;
+		}
+	}
+
+	&__section-intro p {
+		margin: 6px 0 0;
+		color: $text-muted;
+	}
+
+	&__card {
+		border: 1px solid $border;
+		border-radius: $radius;
+		background: $surface;
+	}
+
+	&__section-body {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 24px;
+
+		.components-base-control__help {
+			margin-bottom: 0;
+		}
+	}
+
+	&__short-field {
+		max-width: 320px;
+	}
+
+	&__info {
+
+		p {
+			margin: 4px 0 0;
+		}
+	}
+
+	&__muted {
+		margin: 0;
+		color: $text-muted;
+	}
+
+	&__code {
+		display: inline-block;
+		padding: 4px 8px;
+		border-radius: 4px;
+		font-size: 13px;
+		user-select: all;
+	}
+
+	&__notice.components-notice {
+		margin: 0;
+	}
+
+	// ── Appearance ────────────────────────────────────────────────────────────
+
+	&__colors {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+		gap: 16px 20px;
+	}
+
+	&__color-toggle.components-button {
+		gap: 8px;
+		width: 100%;
+		font-family: monospace;
+
+		.component-color-indicator {
+			flex: none;
+			box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	&__color-popover {
+		width: 260px;
+		padding: 16px;
+	}
+
+	&__preview-frame {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		padding: 16px;
+		border-radius: $radius;
+		background: repeating-linear-gradient(45deg, $surface-muted 0 10px, $surface 10px 20px);
+	}
+
+	// The banner as visitors see it, minus the fixed positioning.
+	&__preview {
+		display: flex;
+
+		&.is-right {
+			justify-content: flex-end;
+		}
+
+		.jcore-evasteet {
+			position: relative;
+			inset: auto;
+			z-index: auto;
+		}
+	}
+
+	// ── Footer ────────────────────────────────────────────────────────────────
+
+	&__footer {
+		position: sticky;
+		bottom: 0;
+		z-index: 10;
+		display: flex;
+		justify-content: flex-end;
+		margin: 0 -20px;
+		padding: 16px 20px;
+		border-top: 1px solid $border;
+		background: rgba(240, 240, 241, 0.92);
+		backdrop-filter: blur(4px);
+	}
+
+	// ── Snackbars ─────────────────────────────────────────────────────────────
+
+	&__snackbars {
+		position: fixed;
+		bottom: 24px;
+		left: 184px; // Clear the expanded admin menu.
+		z-index: 100000;
+		width: auto;
+
+		.folded & {
+			left: 60px;
+		}
+
+		@media (max-width: $break-medium) {
+			right: 16px;
+			left: 16px;
+		}
+	}
+}

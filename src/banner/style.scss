@@ -1,0 +1,189 @@
+// The cookie banner.
+
+// Themable through custom properties on any ancestor (or :root); the colours
+// chosen on the settings screen are printed as the same properties:
+// --jcore-evasteet-background, --jcore-evasteet-text, --jcore-evasteet-muted,
+// --jcore-evasteet-button, --jcore-evasteet-button-text,
+// --jcore-evasteet-switch, --jcore-evasteet-switch-off,
+// --jcore-evasteet-radius, --jcore-evasteet-z.
+// Fonts are inherited from the theme.
+
+$background: var(--jcore-evasteet-background, #111827);
+$text: var(--jcore-evasteet-text, #f9fafb);
+// Follows the text colour, so a light banner with dark text stays readable.
+$muted: var(--jcore-evasteet-muted, color-mix(in srgb, currentcolor 82%, transparent));
+$button: var(--jcore-evasteet-button, #f9fafb);
+$button-text: var(--jcore-evasteet-button-text, #111827);
+$switch-on: var(--jcore-evasteet-switch, #0ea5e9);
+$switch-off: var(--jcore-evasteet-switch-off, #6b7280);
+$radius: var(--jcore-evasteet-radius, 0.75rem);
+
+.jcore-evasteet {
+	position: fixed;
+	inset: auto auto 1rem 1rem;
+	z-index: var(--jcore-evasteet-z, 2147483000);
+	box-sizing: border-box;
+	width: min(24rem, calc(100vw - 2rem));
+	max-height: calc(100vh - 2rem);
+	overflow-y: auto;
+	padding: 1rem 1.25rem;
+	border-radius: $radius;
+	background: $background;
+	color: $text;
+	box-shadow: 0 10px 30px rgb(0 0 0 / 25%);
+	font: inherit;
+	font-size: 0.875rem;
+	line-height: 1.45;
+	text-align: start;
+
+	&--right {
+		inset: auto 1rem 1rem auto;
+	}
+
+	&[hidden],
+	[hidden] {
+		display: none;
+	}
+
+	&__title {
+		margin: 0 0 0.25rem;
+		color: inherit;
+		font: inherit;
+		font-size: 0.9375rem;
+		font-weight: 600;
+	}
+
+	&__message {
+		margin: 0;
+		color: $muted;
+	}
+
+	&__link {
+		color: inherit;
+		text-decoration: underline;
+	}
+
+	&__options {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		margin-top: 0.875rem;
+	}
+
+	&__option {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1rem;
+		margin: 0;
+		cursor: pointer;
+	}
+
+	&__option-name {
+		display: block;
+		font-weight: 600;
+	}
+
+	&__option-desc {
+		display: block;
+		color: $muted;
+		font-size: 0.8125rem;
+	}
+
+	&__switch {
+		appearance: none;
+		position: relative;
+		flex: none;
+		width: 2.25rem;
+		height: 1.25rem;
+		margin: 0.125rem 0 0;
+		padding: 0;
+		border: 0;
+		border-radius: 999px;
+		background: $switch-off;
+		cursor: pointer;
+		transition: background-color 0.15s;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0.125rem;
+			left: 0.125rem;
+			width: 1rem;
+			height: 1rem;
+			border-radius: 50%;
+			background: #fff;
+			transition: transform 0.15s;
+		}
+
+		// Themes (and wp-admin) often draw their own checkmark on checked boxes.
+		&::after {
+			content: none;
+		}
+
+		&:checked {
+			background: $switch-on;
+
+			&::before {
+				transform: translateX(1rem);
+			}
+		}
+
+		&:disabled {
+			opacity: 0.6;
+			cursor: not-allowed;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		gap: 0.5rem;
+		margin-top: 0.875rem;
+	}
+
+	// Reject and Accept share this one rule and nothing else: same colours,
+	// size, weight and position in the row, so refusing is exactly as easy and
+	// as visible as agreeing (GDPR / EDPB guidance on consent banners). The
+	// --reject and --accept modifiers are hooks only; never style them apart.
+	&__button {
+		flex: 1;
+		margin: 0;
+		padding: 0.5rem 0.75rem;
+		border: 1px solid $button;
+		border-radius: calc(#{$radius} / 1.5);
+		background: $button;
+		color: $button-text;
+		font: inherit;
+		font-weight: 600;
+		line-height: 1.45;
+		text-transform: none;
+		cursor: pointer;
+	}
+
+	&__customize {
+		display: block;
+		margin: 0.625rem auto 0;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: inherit;
+		font: inherit;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	&__button:focus-visible,
+	&__customize:focus-visible,
+	&__switch:focus-visible {
+		outline: 2px solid $button;
+		outline-offset: 2px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+
+		&__switch,
+		&__switch::before {
+			transition: none;
+		}
+	}
+}

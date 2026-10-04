@@ -1,0 +1,15 @@
+<!--
+	The banner text typed under Settings → Cookie consent, registered for
+	string translation. Read by WPML and by Polylang.
+-->
+<wpml-config>
+	<admin-texts>
+		<key name="jcore_evasteet_text">
+			<key name="title" />
+			<key name="message" />
+			<key name="necessaryDescription" />
+			<key name="analyticsDescription" />
+			<key name="marketingDescription" />
+		</key>
+	</admin-texts>
+</wpml-config>
