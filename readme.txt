@@ -20,6 +20,7 @@ The banner asks visitors which optional cookies they allow: analytics and market
 * **Google Tag Manager** – optionally loads your container right after the consent defaults.
 * **WP Consent API** – with that plugin active, answers are passed on to plugins that follow it, such as Site Kit.
 * **Multilingual** – the built-in text is translated into Finnish and Swedish and follows the language of the page. Text you write yourself is translated with the string translation of Polylang or WPML. The privacy policy link follows the translated page.
+* **Script blocking** – optionally holds back scripts marked with `data-cookie-category` until the visitor allows that category.
 * **Cache friendly** – the answer is kept in the visitor's browser, so cached pages work as they are.
 * **Settings → Cookie consent** – text, colours and position with a live preview, and **Ask everyone again** for when the cookies or the policy change.
 * **Automatic updates** through the J&Co Digital update service.
@@ -58,7 +59,13 @@ The scripts are built with `@wordpress/scripts`. Their readable source is publis
 
 = Does the plugin block scripts until consent is given? =
 
-It does not rewrite or hold back other scripts. It sets the consent signals that Google's tags follow, passes the answer to plugins through the WP Consent API, and tells your own scripts through `window.jcoreEvasteet` and the `jcore-evasteet-change` event. Tags in Tag Manager that are not Google's need consent settings in the container.
+Only scripts you mark, and only with **Block scripts by category** on under **Settings → Cookie consent**. Give the script tag the category it needs, `analytics` or `marketing`:
+
+`<script type="text/plain" data-cookie-category="marketing" src="https://example.com/pixel.js"></script>`
+
+It runs once the visitor allows that category. Several categories, separated by spaces, must all be allowed; `necessary` never waits. Without `type="text/plain"`, marked scripts in the page are held back while it loads, but scripts added by other scripts are not, so `type="text/plain"` is the sure way. Put a `type` such as `module` in `data-cookie-type`. A script that has run keeps running until the next page, even if the visitor withdraws consent.
+
+Other scripts are left alone. The plugin sets the consent signals that Google's tags follow, passes the answer to plugins through the WP Consent API, and tells your own scripts through `window.jcoreEvasteet` and the `jcore-evasteet-change` event. Tags in Tag Manager that are not Google's need consent settings in the container.
 
 = Where is the answer stored? =
 

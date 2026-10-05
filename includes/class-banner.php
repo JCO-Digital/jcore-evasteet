@@ -23,6 +23,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * container if one is set, so tags never run ahead of the consent signals.
  * The banner itself loads deferred.
  *
+ * With script blocking on, the head script also holds back scripts marked
+ * with `data-cookie-category` until the visitor allows that category, and the
+ * banner runs them once they are allowed.
+ *
  * Every answer is pushed as a Consent Mode update, so GA4 and Google Ads tags
  * follow it; other tags need consent settings in the container. With the WP
  * Consent API plugin active, the answer is mirrored into it as well, so
@@ -235,6 +239,7 @@ final class Banner {
 			'revision'         => $settings['revision'],
 			'dataLayerName'    => $settings['data_layer'],
 			'gtmId'            => $settings['gtm_id'],
+			'blockScripts'     => (bool) $settings['block_scripts'],
 			'position'         => $settings['position'],
 			'settingsHash'     => self::SETTINGS_HASH,
 			'privacyPolicyUrl' => get_privacy_policy_url(),

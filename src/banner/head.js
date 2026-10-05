@@ -8,11 +8,15 @@
  * container always loads, and until a category is allowed Google's tags send
  * cookieless pings only. Later answers reach the running container as
  * consent updates from the banner (index.js), which loads deferred.
+ *
+ * With script blocking on, it also starts holding back the marked scripts
+ * the stored answer doesn't allow; see blocking.js.
  */
 
 /**
  * Internal dependencies
  */
+import { blockScripts } from './blocking';
 import {
 	NONE,
 	consentSignals,
@@ -30,6 +34,10 @@ gtag( 'consent', 'default', {
 const record = readRecord();
 if ( record && ( record.analytics || record.marketing ) ) {
 	gtag( 'consent', 'update', consentSignals( record ) );
+}
+
+if ( settings.blockScripts ) {
+	blockScripts( record ?? NONE );
 }
 
 if ( settings.gtmId ) {

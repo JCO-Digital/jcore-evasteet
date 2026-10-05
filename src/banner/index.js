@@ -5,7 +5,8 @@
  * Mode defaults. Asks on first visit; links to `#cookie-settings` reopen it on
  * the per-category switches. Every answer is pushed as a Consent Mode update,
  * mirrored into the WP Consent API when that plugin is active, and announced
- * with a `jcore-evasteet-change` event on `document`.
+ * with a `jcore-evasteet-change` event on `document`. With script blocking on,
+ * held-back scripts run as soon as their categories are allowed.
  */
 
 /**
@@ -20,6 +21,7 @@ import {
 	settings,
 	writeRecord,
 } from './common';
+import { releaseScripts } from './blocking';
 import { createBanner } from './ui';
 import './style.scss';
 
@@ -77,6 +79,9 @@ function save( choices ) {
 	writeRecord( record );
 	gtag( 'consent', 'update', consentSignals( record ) );
 	syncWpConsent( record );
+	if ( settings.blockScripts ) {
+		releaseScripts( record );
+	}
 	hide();
 
 	const answer = current();
@@ -149,6 +154,10 @@ if ( record ) {
 	// Catches up on answers given before the WP Consent API was active, or
 	// whose API cookies have since expired.
 	syncWpConsent( record );
+	// Deferred, so the page is parsed: every held-back script is in it.
+	if ( settings.blockScripts ) {
+		releaseScripts( record );
+	}
 } else {
 	show();
 }

@@ -21,7 +21,7 @@
 /**
  * Printed by `Jcore\Evasteet\Banner` ahead of both scripts.
  *
- * @type {{storageKey: string, revision: number, dataLayerName: string, gtmId: string, position: string, settingsHash: string, privacyPolicyUrl: string, text: Object<string, string>}}
+ * @type {{storageKey: string, revision: number, dataLayerName: string, gtmId: string, blockScripts: boolean, position: string, settingsHash: string, privacyPolicyUrl: string, text: Object<string, string>}}
  */
 export const settings = window.jcoreEvasteetSettings;
 

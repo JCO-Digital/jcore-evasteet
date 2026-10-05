@@ -32,10 +32,14 @@ const EDITABLE = [
 	'colors',
 	'gtm_id',
 	'data_layer',
+	'block_scripts',
 	'text',
 ];
 
 const GTM_ID = /^GTM-[A-Z0-9]+$/;
+
+const BLOCKING_EXAMPLE =
+	'<script type="text/plain" data-cookie-category="marketing" src="…"></script>';
 
 const TEXT_FIELDS = [
 	{
@@ -454,6 +458,41 @@ export default function App() {
 						) }
 						onChange={ ( value ) => update( 'data_layer', value ) }
 					/>
+				</Section>
+
+				<Section
+					title={ __( 'Script blocking', 'jcore-evasteet' ) }
+					description={ __(
+						'Holds back scripts marked with the cookie category they need until the visitor allows it. Use it for tags that do not follow Google Consent Mode.',
+						'jcore-evasteet'
+					) }
+				>
+					<ToggleControl
+						__nextHasNoMarginBottom
+						label={ __(
+							'Block scripts by category',
+							'jcore-evasteet'
+						) }
+						help={ __(
+							'Scripts without a category are not affected.',
+							'jcore-evasteet'
+						) }
+						checked={ !! settings.block_scripts }
+						onChange={ ( checked ) =>
+							update( 'block_scripts', checked ? 1 : 0 )
+						}
+					/>
+					<div className="jcore-evasteet-admin__info">
+						<code className="jcore-evasteet-admin__code">
+							{ BLOCKING_EXAMPLE }
+						</code>
+						<p className="jcore-evasteet-admin__muted">
+							{ __(
+								'Mark a script with data-cookie-category set to analytics or marketing. It runs once the visitor allows that category, right away on later pages. Give it type="text/plain" as well to hold it back for certain, also when another script adds it to the page.',
+								'jcore-evasteet'
+							) }
+						</p>
+					</div>
 				</Section>
 
 				<Section

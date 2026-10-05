@@ -42,6 +42,7 @@ The visitor's answer lives in `localStorage` (`jcore-evasteet`), never in a cook
 
 - `src/banner/head.js` is printed **inline at the top of `<head>`** (`wp_head`, priority 0) together with `window.jcoreEvasteetSettings`. It pushes the Consent Mode default (everything denied), then an update if a stored answer grants anything, then loads the Tag Manager container if one is set. Nothing can run ahead of the signals. The tag carries the opt-out attributes of the common optimizers so they leave it alone.
 - `src/banner/index.js` loads **deferred**. It shows the banner when there is no answer for the current revision, handles `#cookie-settings` links, pushes `consent update` on every answer, mirrors answers into the WP Consent API and exposes `window.jcoreEvasteet`.
+- `src/banner/blocking.js` is the optional script blocking (`block_scripts`). A `MutationObserver` started by `head.js` turns `<script data-cookie-category>` tags the stored answer doesn't allow into `type="text/plain"` while the page is parsed (the original type goes to `data-cookie-type`), and `index.js` replaces allowed ones with live copies, in document order, on load and on every answer. Scripts above the head bootstrap or added by other scripts aren't caught unless they are `type="text/plain"` already.
 - `src/banner/ui.js` builds the banner DOM. The admin app's preview uses the same module, so the preview is the banner.
 - The stylesheet is registered with its `path`, so WordPress inlines it when it fits the inline budget.
 
@@ -91,7 +92,7 @@ All routes require `manage_options`.
 
 ## Stored data
 
-- Option `jcore_evasteet_settings` – enabled, position, colours, Tag Manager container and data layer, revision.
+- Option `jcore_evasteet_settings` – enabled, position, colours, Tag Manager container and data layer, script blocking, revision.
 - Option `jcore_evasteet_text` – the banner text typed on the settings screen.
 
 ## Releasing

@@ -53,13 +53,15 @@ final class Settings {
 	 */
 	public static function defaults(): array {
 		return array(
-			'enabled'    => 1,
-			'position'   => 'left',
-			'colors'     => array_fill_keys( self::COLOR_KEYS, '' ),
-			'gtm_id'     => '',
-			'data_layer' => 'dataLayer',
+			'enabled'       => 1,
+			'position'      => 'left',
+			'colors'        => array_fill_keys( self::COLOR_KEYS, '' ),
+			'gtm_id'        => '',
+			'data_layer'    => 'dataLayer',
+			// Hold back scripts marked with data-cookie-category until their category is allowed.
+			'block_scripts' => 0,
 			// Raised to ask every visitor again; answers for older revisions are dropped.
-			'revision'   => 1,
+			'revision'      => 1,
 		);
 	}
 
@@ -167,6 +169,8 @@ final class Settings {
 		// Becomes a window property name in the page's script, so only identifiers pass.
 		$data_layer          = trim( (string) ( $input['data_layer'] ?? '' ) );
 		$clean['data_layer'] = preg_match( '/^[A-Za-z_$][A-Za-z0-9_$]*$/', $data_layer ) ? $data_layer : $defaults['data_layer'];
+
+		$clean['block_scripts'] = empty( $input['block_scripts'] ) ? 0 : 1;
 
 		$clean['revision'] = max( 1, absint( $input['revision'] ?? $defaults['revision'] ) );
 

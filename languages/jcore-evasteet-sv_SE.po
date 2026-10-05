@@ -272,6 +272,26 @@ msgid "Change only if the container uses a data layer other than dataLayer."
 msgstr "Ändra bara om containern använder ett annat datalager än dataLayer."
 
 #: build/admin.js:2
+msgid "Script blocking"
+msgstr "Blockering av skript"
+
+#: build/admin.js:2
+msgid "Holds back scripts marked with the cookie category they need until the visitor allows it. Use it for tags that do not follow Google Consent Mode."
+msgstr "Håller tillbaka skript som är märkta med den kakkategori de behöver tills besökaren tillåter den. Använd det för taggar som inte följer Google Consent Mode."
+
+#: build/admin.js:2
+msgid "Block scripts by category"
+msgstr "Blockera skript efter kategori"
+
+#: build/admin.js:2
+msgid "Scripts without a category are not affected."
+msgstr "Skript utan kategori påverkas inte."
+
+#: build/admin.js:2
+msgid "Mark a script with data-cookie-category set to analytics or marketing. It runs once the visitor allows that category, right away on later pages. Give it type=\"text/plain\" as well to hold it back for certain, also when another script adds it to the page."
+msgstr "Märk ett skript med data-cookie-category satt till analytics eller marketing. Det körs när besökaren tillåter kategorin, och direkt på senare sidor. Ge det även type=\"text/plain\" för att säkert hålla tillbaka det, också när ett annat skript lägger till det på sidan."
+
+#: build/admin.js:2
 msgid "Changing an answer"
 msgstr "Ändra ett svar"
 

@@ -272,6 +272,26 @@ msgid "Change only if the container uses a data layer other than dataLayer."
 msgstr "Muuta vain, jos säilö käyttää jotain muuta datakerrosta kuin dataLayer."
 
 #: build/admin.js:2
+msgid "Script blocking"
+msgstr "Skriptien esto"
+
+#: build/admin.js:2
+msgid "Holds back scripts marked with the cookie category they need until the visitor allows it. Use it for tags that do not follow Google Consent Mode."
+msgstr "Pidättää skriptit, joihin on merkitty niiden tarvitsema evästeluokka, kunnes kävijä sallii sen. Käytä tätä tageille, jotka eivät noudata Google Consent Modea."
+
+#: build/admin.js:2
+msgid "Block scripts by category"
+msgstr "Estä skriptit evästeluokan mukaan"
+
+#: build/admin.js:2
+msgid "Scripts without a category are not affected."
+msgstr "Tämä ei vaikuta skripteihin, joilla ei ole luokkaa."
+
+#: build/admin.js:2
+msgid "Mark a script with data-cookie-category set to analytics or marketing. It runs once the visitor allows that category, right away on later pages. Give it type=\"text/plain\" as well to hold it back for certain, also when another script adds it to the page."
+msgstr "Merkitse skriptiin data-cookie-category, jonka arvo on analytics tai marketing. Skripti suoritetaan, kun kävijä sallii luokan, ja myöhemmillä sivuilla heti. Lisää myös type=\"text/plain\", niin skripti pidätetään varmasti, myös kun toinen skripti lisää sen sivulle."
+
+#: build/admin.js:2
 msgid "Changing an answer"
 msgstr "Vastauksen muuttaminen"
 
